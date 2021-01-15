@@ -1,38 +1,66 @@
 import 'package:flutter/material.dart';
+import 'package:oilrig/customPositioned.dart';
 import 'package:oilrig/designprops/colorcodes.dart';
-import 'package:oilrig/svgCliping.dart';
 
 class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
+      alignment: Alignment.topCenter,
       children: [
-        BackgroundSVG(),
-        Container(
-          // color: Colors.red,
-          width: double.infinity,
-          height: MediaQuery.of(context).size.height * 0.45,
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(LimeWhite),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: EdgeInsets.all(50),
-                child: Text('Kill Sheets'),
-              ),
-              Container(
-                decoration: BoxDecoration(
-                  color: Color(LimeWhite),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                padding: EdgeInsets.all(50),
-                child: Text('Kill Sheets'),
-              ),
-            ],
+        Positioned(
+          bottom: -50,
+          child: Container(
+            width: MediaQuery.of(context).size.width * 2,
+            // height: 1000,
+            child: Image.asset(
+              'lib\\assets\\rigbackground2.png',
+              fit: BoxFit.contain,
+            ),
           ),
-        )
+        ),
+        Positioned(
+          bottom: 0,
+          child: Container(
+            margin: EdgeInsets.only(bottom: 50),
+            decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.black.withOpacity(0.4), // Drop Shadow Color
+                  spreadRadius: 5,
+                  blurRadius: 15,
+                  offset: Offset(0, 2),
+                ),
+              ],
+            ),
+            child: RaisedButton(
+              padding: EdgeInsets.symmetric(horizontal: 60, vertical: 20),
+              color: Color(LimeBlue),
+              onPressed: () {},
+              child: Text('Lets Go'),
+            ),
+          ),
+        ),
+        CustomPositioned(
+          top: -80,
+          right: -400,
+          width: MediaQuery.of(context).size.width * 2,
+          height: MediaQuery.of(context).size.height / 1.5,
+          // height: 350,
+          // width: 350,
+        ),
+        CustomPositioned(
+          left: -400,
+          top: -50,
+          width: MediaQuery.of(context).size.width * 2,
+          height: MediaQuery.of(context).size.height / 1.5,
+          // height: 350,
+          // width: 350,
+        ),
+        CustomPositioned(
+          top: -150,
+          width: MediaQuery.of(context).size.width * 2,
+          height: MediaQuery.of(context).size.height / 1.5,
+        ),
       ],
     );
   }

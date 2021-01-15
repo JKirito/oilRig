@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oilrig/designprops/colorcodes.dart';
-import 'package:oilrig/drawerContent.dart';
 import 'package:oilrig/homeScreen.dart';
+// import 'designprops/colorcodes.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,6 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Homepage(),
       theme: ThemeData(),
     );
@@ -21,22 +21,9 @@ class MyApp extends StatelessWidget {
 class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
-      drawer: Drawer(
-          child: Container(
-        width: double.infinity,
-        height: double.infinity,
-        color: Color(DarkBlue),
-        child: DrawerContent(),
-      )),
-      appBar: AppBar(
-        title: Text(
-          'Oil Rig',
-        ),
-        centerTitle: true,
-        backgroundColor: Color(DarkBlue),
-      ),
       body: Container(
-        color: Color(LimeBlue),
+        height: double.infinity,
+        width: double.infinity,
         child: HomeScreen(),
       ),
     );
