@@ -34,7 +34,7 @@ class CustomPositioned extends StatelessWidget {
             BoxShadow(
               color: Colors.black.withOpacity(0.4), // Drop Shadow Color
               spreadRadius: 5,
-              blurRadius: 15,
+              blurRadius: 20,
               offset: Offset(0, 2),
             )
           ],
